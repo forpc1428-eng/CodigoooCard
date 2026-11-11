@@ -3,93 +3,162 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0a0a0b">
-<meta name="description" content="Vedant Bhayani — CODIGOOO. Web, app and software development.">
+<meta name="theme-color" content="#C3000E">
+<meta name="description" content="Vedant Bhayani — Founder & Developer at CODIGOOO. Websites, apps and software.">
 <title>Vedant Bhayani — CODIGOOO</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23070707'/%3E%3Cg fill='none' stroke='%23FF2B2B' stroke-width='5'%3E%3Ccircle cx='15' cy='32' r='8'/%3E%3Ccircle cx='32' cy='32' r='8'/%3E%3Ccircle cx='49' cy='32' r='8'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#0a0a0b;--panel:#111214;--panel2:#17191b;--white:#f7f7f4;--muted:#a4a6a2;
-  --lime:#d4ff3f;--orange:#ff3d00;--violet:#7c5cff;--line:#303235;
-  --font:Inter, "Helvetica Neue", Arial, sans-serif;
+  --red:#C3000E;--hot:#FF2B2B;--black:#070707;--bone:#F3F0EC;--white:#F3F0EC;--dim:rgba(243,240,236,.58);--line:rgba(255,255,255,.13);
+  --fd:"Unbounded","Arial Black",sans-serif;--fb:"Geist",system-ui,sans-serif;--fm:"Geist Mono",ui-monospace,monospace;
+  --ease:cubic-bezier(.16,1,.3,1);--io:cubic-bezier(.76,0,.24,1);
+  --pad:clamp(10px,2.2vmin,24px);
 }
-*{box-sizing:border-box}
-html,body{margin:0;width:100%;height:100%;overflow:hidden}
-body{background:var(--ink);color:var(--white);font-family:var(--font);-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
-button{font:inherit}
-.canvas{height:100svh;width:100%;padding:clamp(12px,2.4vw,30px);display:grid;place-items:center;background:
- radial-gradient(ellipse at 8% 8%,#d4ff3f12,transparent 30%),
- radial-gradient(ellipse at 94% 88%,#7c5cff12,transparent 28%),
- var(--ink)}
-.card{position:relative;width:min(1120px,100%);height:min(690px,100%);min-height:0;border:1px solid #393b3c;border-radius:24px;overflow:hidden;background:linear-gradient(125deg,#111214 0%,#0b0c0d 55%,#10110e 100%);box-shadow:0 30px 100px #0009;display:grid;grid-template-columns:1.03fr .97fr}
-.card:before{content:"";position:absolute;width:360px;height:360px;border:1px solid #d4ff3f24;border-radius:50%;left:-205px;top:60px;box-shadow:0 0 0 32px #d4ff3f05,0 0 0 65px #d4ff3f04;pointer-events:none}
-.left{padding:clamp(22px,3.5vw,46px);display:flex;flex-direction:column;position:relative;min-width:0}
-.right{border-left:1px solid var(--line);padding:clamp(20px,3vw,38px);display:flex;flex-direction:column;min-width:0;position:relative;background:linear-gradient(150deg,#ffffff03,transparent 45%)}
-.header{display:flex;justify-content:space-between;align-items:center;gap:12px}
-.logo{font-weight:950;letter-spacing:-.07em;font-size:clamp(19px,2.2vw,27px);white-space:nowrap}.logo .ooo{color:var(--lime)}
-.logo-sub{font-size:9px;letter-spacing:.19em;color:#b9bbb6;margin-top:3px}
-.avail{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--lime);border:1px solid #43521f;border-radius:99px;padding:7px 9px;white-space:nowrap}
-.hero{margin:auto 0;position:relative;padding:22px 0}
-.eyebrow{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:9px}
-.eyebrow:before{content:"";width:22px;height:2px;background:var(--lime);display:block}
-h1{font-size:clamp(42px,6.5vw,76px);letter-spacing:-.075em;line-height:.88;margin:20px 0 17px;font-weight:900}
-h1 span{color:var(--lime)}
-.role{font-size:clamp(11px,1.2vw,14px);letter-spacing:.13em;text-transform:uppercase;font-weight:750}
-.desc{color:#b8bab5;font-size:clamp(12px,1.2vw,14px);line-height:1.6;max-width:330px;margin:15px 0 0}
-.big-mark{position:absolute;right:1px;bottom:-15px;font-weight:950;font-size:clamp(100px,16vw,180px);letter-spacing:-.12em;color:#ffffff04;line-height:.8;pointer-events:none;user-select:none}
-.bottom{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-top:auto}
-.contact-mini{display:grid;gap:8px;min-width:0}
-.contact-mini a{font-size:12px;color:#e8e9e5;display:flex;gap:9px;align-items:center;overflow-wrap:anywhere}
-.dot{color:var(--lime);font-size:14px;flex:none}
-.monogram{font-size:42px;font-weight:950;letter-spacing:-.12em;color:var(--white);line-height:1;white-space:nowrap}
-.monogram span{color:var(--lime)}
-.rule{height:1px;background:linear-gradient(90deg,var(--lime),#ffffff20,transparent);margin:22px 0}
-.section-label{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#b8bbb4;display:flex;justify-content:space-between;align-items:center;margin-bottom:13px}
-.section-label span:last-child{color:#6e726a}
-.services{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.service{border:1px solid #303235;background:linear-gradient(145deg,#191b1d,#111214);padding:12px;border-radius:13px;min-width:0;min-height:74px}
-.service .num{font-size:9px;color:var(--lime);letter-spacing:.13em}
-.service strong{display:block;font-size:clamp(11px,1.15vw,13px);margin-top:7px;letter-spacing:-.02em}
-.service small{color:var(--muted);font-size:10px;display:block;margin-top:3px}
-.project{margin-top:18px;border:1px solid #333639;border-radius:14px;padding:13px 14px;display:flex;justify-content:space-between;align-items:center;gap:12px;background:#ffffff03}
-.project-title{font-size:13px;font-weight:800}.project-sub{font-size:10px;color:var(--muted);margin-top:3px}
-.project-arrow{display:grid;place-items:center;width:35px;height:35px;background:var(--lime);color:#111;border-radius:50%;font-size:20px;flex:none}
-.cta{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--lime);color:#10110d;border-radius:14px;padding:13px 15px;margin-top:auto}
-.cta strong{font-size:13px;display:block}.cta small{font-size:10px;opacity:.75;display:block;margin-top:2px}
-.cta .arrow{font-size:22px;line-height:1}
-.actions{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:10px}
-.action{border:1px solid #343638;border-radius:11px;padding:10px 7px;display:flex;justify-content:center;align-items:center;gap:7px;font-size:10px;font-weight:750;background:#151719;color:var(--white);cursor:pointer;min-width:0}
-.action svg{width:15px;height:15px;flex:none;color:var(--lime)}
-.action:hover{border-color:var(--lime)}
-.footer{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-top:14px;color:#777b73;font-size:8px;letter-spacing:.15em;text-transform:uppercase}
-.footer a{color:#d4ff3f}
-#qrbox{position:fixed;inset:0;background:#000b;display:none;place-items:center;padding:20px;z-index:10}
-#qrbox.open{display:grid}
-.qrmodal{background:#111214;border:1px solid #3b3d3e;border-radius:20px;padding:24px;text-align:center;width:min(320px,100%);box-shadow:0 20px 70px #0009}
-.qrmodal h2{font-size:19px;margin:0 0 6px}.qrmodal p{font-size:12px;color:var(--muted);margin:0 0 16px}
-#qrcode{background:#fff;padding:10px;border-radius:12px;width:150px;height:150px;margin:0 auto 15px;display:grid;place-items:center}
-#qrcode img,#qrcode canvas{max-width:100%;height:auto!important}
-.close{background:var(--lime);color:#111;border:0;border-radius:10px;padding:10px 18px;font-weight:800;cursor:pointer}
-.toast{position:fixed;left:50%;bottom:16px;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#eaffb3;color:#111;padding:10px 15px;border-radius:99px;font-size:12px;font-weight:800;transition:.2s;z-index:20;max-width:calc(100% - 24px);text-align:center}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden;overscroll-behavior:none}
+body{background:var(--red);color:var(--white);font-family:var(--fb);-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.lab{font-family:var(--fm);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:500}
+.dim{color:var(--dim)}
+
+/* backdrop */
+.bg{position:fixed;inset:0;background:radial-gradient(70% 55% at 50% 100%,#E3101C 0%,#B0000C 45%,#5C0007 100%)}
+#sky{position:fixed;left:0;right:0;bottom:0;width:100%;height:46%}
+.cross{position:fixed;inset:0;pointer-events:none}
+.cross i{position:absolute;width:11px;height:11px;margin:-5px 0 0 -5px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11'%3E%3Cpath d='M5.5 0v11M0 5.5h11' stroke='%23fff' stroke-opacity='.45'/%3E%3C/svg%3E")}
+.fx{position:fixed;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.18) 0 1px,transparent 1px 3px);mix-blend-mode:overlay;opacity:.5}
+
+/* stage: exactly one screen, never scrolls */
+.stage{position:fixed;inset:0;display:grid;place-items:center;padding:calc(var(--pad) + env(safe-area-inset-top)) calc(var(--pad) + env(safe-area-inset-right)) calc(var(--pad) + env(safe-area-inset-bottom)) calc(var(--pad) + env(safe-area-inset-left))}
+.tilt{width:min(1080px,100%);height:min(700px,100%);perspective:1600px}
+.card{position:relative;width:100%;height:100%;background:var(--black);display:grid;grid-template-columns:1.05fr 1fr;box-shadow:0 40px 90px -30px rgba(40,0,4,.75),0 0 0 1px rgba(255,255,255,.06);transform-style:preserve-3d}
+.corner{position:absolute;width:14px;height:14px;border:0 solid var(--hot);z-index:4;pointer-events:none}
+.corner.tl{top:-7px;left:-7px;border-top-width:2px;border-left-width:2px}.corner.tr{top:-7px;right:-7px;border-top-width:2px;border-right-width:2px}
+.corner.bl{bottom:-7px;left:-7px;border-bottom-width:2px;border-left-width:2px}.corner.br{bottom:-7px;right:-7px;border-bottom-width:2px;border-right-width:2px}
+.glare{position:absolute;inset:0;pointer-events:none;z-index:3;opacity:0;transition:opacity .4s;background:radial-gradient(600px circle at var(--gx,50%) var(--gy,0%),rgba(255,255,255,.07),transparent 45%)}
+.tilt:hover .glare{opacity:1}
+.col{min-width:0;min-height:0;padding:clamp(16px,3.2vmin,34px);display:flex;flex-direction:column;gap:clamp(8px,1.8vmin,16px)}
+.col+.col{border-left:1px solid var(--line)}
+
+/* identity */
+.top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.logo{display:flex;align-items:center;gap:7px;font-family:var(--fd);font-weight:700;font-size:16px;letter-spacing:-.02em}
+.logo .ooo{display:flex;gap:3px}.logo .ooo i{width:11px;height:11px;border:2px solid var(--hot);border-radius:50%}
+.logo sup{font-size:.45em;font-family:var(--fm)}
+.status{display:flex;align-items:center;gap:7px;height:26px;padding:0 9px;border:1px solid rgba(255,43,43,.45);color:var(--hot);white-space:nowrap}
+.status b{width:6px;height:6px;background:var(--hot);box-shadow:0 0 10px var(--hot);animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.meta{display:flex;justify-content:space-between;gap:10px}
+.ruler{flex:none;height:12px;border-bottom:1px solid var(--line);position:relative;background:repeating-linear-gradient(90deg,rgba(255,255,255,.28) 0 1px,transparent 1px 8px) left bottom/100% 5px no-repeat,repeating-linear-gradient(90deg,rgba(255,255,255,.6) 0 1px,transparent 1px 80px) left bottom/100% 11px no-repeat}
+.ruler i{position:absolute;left:0;bottom:-1px;height:2px;width:0;background:var(--hot);box-shadow:0 0 10px var(--hot);transition:width 1.6s var(--ease)}
+.name{font-family:var(--fd);font-weight:700;font-size:clamp(30px,min(6.2vw,9.5vh),80px);line-height:.9;letter-spacing:-.04em;text-transform:uppercase}
+.name .ln{display:block;white-space:nowrap}.name .acc{color:var(--hot)}
+.name .c{display:inline-block}
+.name .c.dec{font-family:var(--fm);color:var(--hot);text-shadow:0 0 16px var(--hot)}
+.role{display:flex;align-items:center;gap:8px;font-family:var(--fm);font-size:clamp(10.5px,1.5vmin,12.5px);letter-spacing:.1em;text-transform:uppercase;min-height:1.4em;white-space:nowrap;overflow:hidden}
+.role::before{content:"//";color:var(--hot)}
+.desc{font-size:clamp(13px,1.8vmin,15px);line-height:1.55;color:var(--dim);max-width:42ch}
+.tags{display:flex;flex-wrap:wrap;gap:5px}
+.tag{display:flex;align-items:center;gap:6px;height:28px;padding:0 9px;border:1px solid var(--line);font-family:var(--fm);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;transition:border-color .3s,color .3s}
+.tag b{color:var(--hot);font-weight:500}
+.tag:hover{border-color:var(--hot)}
+.spacer{flex:1;min-height:0}
+.contacts{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.crow{display:grid;grid-template-columns:58px 1fr auto;align-items:center;gap:10px;min-height:clamp(38px,5.6vh,48px);padding:0 4px;border-bottom:1px solid var(--line);position:relative;overflow:hidden;transition:color .35s}
+.crow::before{content:"";position:absolute;inset:0;background:var(--white);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.crow>*{position:relative}
+.crow .v{font-size:clamp(13px,1.8vmin,15px);font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.crow .ar{font-family:var(--fm);transition:transform .45s var(--ease)}
+.crow:hover::before{transform:scaleX(1)}.crow:hover,.crow:hover .lab{color:var(--black)}.crow:hover .ar{transform:translate(2px,-2px)}
+.strip{display:flex;align-items:center;gap:12px}
+.strip svg{height:26px;flex:1;min-width:0}
+
+/* QR panel */
+.qrpanel{flex:1;min-height:0;display:flex;flex-direction:column;gap:10px;border:1px solid var(--line);padding:clamp(10px,2vmin,16px);background:linear-gradient(160deg,#111112,#0a0a0b)}
+.qrhead{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.seg{position:relative;display:grid;grid-template-columns:1fr 1fr;height:32px;border:1px solid var(--line);min-width:150px}
+.seg button{position:relative;z-index:1;font-family:var(--fm);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;padding:0 14px;color:var(--dim);transition:color .35s}
+.seg button.on{color:var(--black)}
+.seg .knob{position:absolute;top:2px;bottom:2px;left:2px;width:calc(50% - 2px);background:var(--hot);transition:transform .55s var(--ease)}
+.seg[data-v="site"] .knob{transform:translateX(100%)}
+.qrbox{position:relative;flex:1;min-height:0}
+.qrframe{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);cursor:zoom-in}
+.qrframe canvas{display:block;width:100%;height:100%}
+.qrframe .corner{width:18px;height:18px;animation:pulse 2.4s var(--io) infinite}
+.qrframe .corner.tl{top:-10px;left:-10px}.qrframe .corner.tr{top:-10px;right:-10px}.qrframe .corner.bl{bottom:-10px;left:-10px}.qrframe .corner.br{bottom:-10px;right:-10px}
+@keyframes pulse{50%{transform:scale(1.25);opacity:.6}}
+.qrmsg[hidden]{display:none}
+.qrmsg{position:absolute;inset:0;display:grid;place-items:center;text-align:center;font-family:var(--fm);font-size:11px;color:var(--dim);padding:20px}
+.qrfoot{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.qrfoot .url{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.qrfoot button{color:var(--hot);white-space:nowrap}
+
+/* WhatsApp CTA */
+.wa{position:relative;flex:none;display:flex;align-items:stretch;height:clamp(52px,8vh,70px);background:var(--hot);color:var(--black);overflow:hidden;isolation:isolate}
+.wa::before{content:"";position:absolute;inset:0;background:var(--white);transform:translateY(101%);transition:transform .55s var(--ease);z-index:-1}
+.wa:hover::before{transform:none}
+.wa .ic{aspect-ratio:1;display:grid;place-items:center;background:rgba(0,0,0,.16);border-right:1px solid rgba(0,0,0,.18);flex:none}
+.wa .ic svg{width:26px;height:26px}
+.wa .tx{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;padding:0 14px}
+.wa .tx strong{font-family:var(--fd);font-weight:700;font-size:clamp(12.5px,1.6vw,16px);text-transform:uppercase;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wa .tx small{font-family:var(--fm);font-size:10px;letter-spacing:.07em;text-transform:uppercase;margin-top:4px;opacity:.75}
+.wa .go{display:grid;place-items:center;padding:0 16px;font-size:20px;transition:transform .5s var(--ease)}
+.wa:hover .go{transform:translate(3px,-3px)}
+
+/* actions */
+.acts{flex:none;display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:6px}
+.act{display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;gap:8px;height:clamp(54px,8.4vh,72px);padding:10px;border:1px solid var(--line);background:#0c0c0d;text-align:left;transition:border-color .3s,background .3s}
+.act svg{width:18px;height:18px;color:var(--hot)}
+.act:hover{border-color:var(--hot);background:#160406}
+.act:active{transform:scale(.97)}
+.m-only{display:none!important}
+
+/* fullscreen QR */
+.zoom{position:fixed;inset:0;z-index:30;display:grid;place-items:center;background:rgba(7,7,7,.94);opacity:0;visibility:hidden;transition:opacity .4s,visibility .4s;padding:24px}
+.zoom.open{opacity:1;visibility:visible}
+.zoom__in{display:flex;flex-direction:column;align-items:center;gap:18px;transform:scale(.94);transition:transform .6s var(--ease)}
+.zoom.open .zoom__in{transform:none}
+#qrBig{width:min(78vw,68vh);height:min(78vw,68vh);display:block}
+.zoom .lab{text-align:center}
+
+/* toast */
+.toast{position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom));z-index:40;transform:translate(-50%,20px);opacity:0;pointer-events:none;display:flex;align-items:center;gap:10px;max-width:calc(100% - 24px);padding:12px 16px;background:var(--black);border:1px solid var(--hot);font-family:var(--fm);font-size:11.5px;letter-spacing:.05em;transition:all .35s var(--ease)}
+.toast::before{content:"";width:7px;height:7px;background:var(--hot);flex:none}
 .toast.show{opacity:1;transform:translate(-50%,0)}
-@media(min-width:1000px){.card{height:min(690px,calc(100svh - 48px))}}
-@media(max-width:680px){
- .canvas{padding:9px}.card{width:100%;height:calc(100svh - 18px);border-radius:18px;grid-template-columns:1fr;grid-template-rows:.94fr 1.06fr;overflow:hidden}
- .left{padding:17px 19px 14px}.right{border-left:0;border-top:1px solid var(--line);padding:14px 19px 15px}
- .logo{font-size:19px}.logo-sub{font-size:7px}.avail{font-size:7px;padding:6px 7px}
- .hero{padding:12px 0;margin:auto 0}h1{font-size:clamp(37px,10.2vw,55px);margin:12px 0 9px}.role{font-size:9px}.desc{font-size:10px;line-height:1.45;margin-top:8px;max-width:270px}
- .bottom{margin-top:8px}.contact-mini{gap:5px}.contact-mini a{font-size:10px}.monogram{font-size:31px}.rule{margin:10px 0}
- .section-label{font-size:8px;margin-bottom:8px}.services{gap:6px}.service{padding:8px 9px;min-height:57px;border-radius:10px}.service .num{font-size:7px}.service strong{font-size:10px;margin-top:4px}.service small{font-size:8px;margin-top:1px}
- .project{margin-top:9px;padding:9px 10px;border-radius:11px}.project-title{font-size:11px}.project-sub{font-size:8px}.project-arrow{width:28px;height:28px;font-size:17px}
- .cta{padding:9px 11px;border-radius:11px}.cta strong{font-size:11px}.cta small{font-size:8px}.cta .arrow{font-size:18px}
- .actions{gap:5px;margin-top:7px}.action{padding:8px 4px;font-size:8px;gap:4px;border-radius:9px}.action svg{width:12px;height:12px}
- .footer{font-size:6px;margin-top:8px}
+
+/* entrance */
+.rise{opacity:0;transform:translateY(14px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.ready .rise{opacity:1;transform:none}
+
+/* short desktop screens */
+@media (min-width:761px) and (max-height:760px){.desc{display:none}}
+@media (min-width:761px) and (max-height:560px){.contacts,.strip,.tags,.meta,.ruler{display:none}.spacer{display:none}.acts .act{height:46px;flex-direction:row;align-items:center}}
+
+/* ── phones (portrait): one column, QR is the hero, still one screen ── */
+@media (max-width:760px){
+  .tilt{width:min(480px,100%);height:100%}
+  .card{grid-template-columns:1fr;grid-template-rows:auto 1fr}
+  .col{padding:14px 14px 12px;gap:9px}
+  .col+.col{border-left:0;border-top:1px solid var(--line);padding-top:12px}
+  .desc,.contacts,.strip,.spacer,.meta{display:none}
+  .name{font-size:clamp(26px,min(11.5vw,6.2vh),52px)}
+  .tags{gap:4px}.tag{height:24px;padding:0 7px;font-size:9.5px}
+  .logo{font-size:14px}.status{height:24px;font-size:9.5px}
+  .m-only{display:flex!important}
+  .d-only{display:none!important}
+  .act{height:clamp(50px,7.6vh,62px);padding:8px;font-size:9.5px}
+  .act svg{width:16px;height:16px}
+  .seg{height:30px;min-width:136px}
 }
-@media(max-height:650px) and (min-width:681px){.card{height:calc(100svh - 24px)}.left,.right{padding:18px 25px}.hero{padding:10px 0}h1{font-size:54px;margin:12px 0}.rule{margin:12px 0}.service{min-height:61px;padding:9px}.project{margin-top:10px;padding:9px 12px}.cta{padding:9px 12px}.footer{margin-top:8px}}
+@media (max-width:760px) and (max-height:640px){.tags,.ruler{display:none}.role{font-size:10px}.wa{height:48px}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition-duration:.01ms!important}}
 </style>
 </head>
 <body>
-<!-- EDIT YOUR LINKS / DETAILS HERE: update values in the CONFIG object below. -->
+<!-- ═══ EDIT YOUR DETAILS HERE — every link, label, QR and the vCard read from CONFIG ═══ -->
 <script>
 const CONFIG = {
   name: "Vedant Bhayani",
@@ -100,104 +169,272 @@ const CONFIG = {
   phoneDisplay: "+91 96875 24884",
   phoneInternational: "+919687524884",
   whatsappNumber: "919687524884",
-  website: "https://codigooo.vercel.app/",
-  // Set this to the final public URL of THIS visiting card after hosting it.
-  cardUrl: "https://codigooocard.netlify.app/",
+  email: "vedantbhayani00@gmail.com",
+  website: "https://codigooo.vercel.app/",      // QR "Site" tab
+  cardUrl: "https://codigooocard.netlify.app/",  // QR "Card" tab + Share
   instagram: "",
-  linkedin: "",
-  email: ""
+  linkedin: ""
 };
 </script>
-<div class="canvas">
-<main class="card">
-  <section class="left">
-    <header class="header">
-      <a class="brand-link" id="brandLink" href="https://codigooo.netlify.app/" aria-label="CODIGOOO website">
-        <div class="logo">CODIG<span class="ooo">OOO</span><span style="font-size:.42em;vertical-align:top;letter-spacing:0">®</span></div>
-        <div class="logo-sub">WEB&nbsp; / &nbsp;APP&nbsp; / &nbsp;SOFTWARE&nbsp; / &nbsp;DESIGN</div>
-      </a>
-      <span class="avail">● Taking projects</span>
-    </header>
-    <div class="hero">
-      <div class="eyebrow">Independent digital studio</div>
-      <h1 id="headline">Vedant<br><span>Bhayani.</span></h1>
-      <div class="role" id="roleText">Founder &amp; Developer</div>
-      <p class="desc">Turning ideas into powerful digital experiences. Websites, apps and software built around your business.</p>
-      <div class="big-mark" aria-hidden="true">C°</div>
-    </div>
-    <div class="bottom">
-      <div class="contact-mini">
-        <a id="phoneLink" href="tel:+919687524884"><span class="dot">↗</span><span id="phoneText">+91 96875 24884</span></a>
-        <a id="siteTextLink" href="https://codigooo.netlify.app/" target="_blank" rel="noopener"><span class="dot">↗</span><span>codigooo.netlify.app</span></a>
-      </div>
-      <div class="monogram" aria-hidden="true">C<span>°</span></div>
-    </div>
-  </section>
-  <section class="right">
-    <div class="section-label"><span>01 / Capabilities</span><span>What I build</span></div>
-    <div class="services">
-      <article class="service"><div class="num">01 — WEB</div><strong>Web Development</strong><small>Fast. Responsive. Built to convert.</small></article>
-      <article class="service"><div class="num">02 — APP</div><strong>App Development</strong><small>Useful digital products, made real.</small></article>
-      <article class="service"><div class="num">03 — DESIGN</div><strong>UI / UX Design</strong><small>Clear interfaces. Thoughtful detail.</small></article>
-      <article class="service"><div class="num">04 — SYSTEMS</div><strong>Custom Software</strong><small>Tools and workflows that work smarter.</small></article>
-    </div>
-    <a class="project" id="portfolioLink" href="https://codigooo.netlify.app/" target="_blank" rel="noopener">
-      <div><div class="section-label" style="margin:0 0 5px;color:var(--lime)">02 / Selected work</div><div class="project-title">Explore CODIGOOO</div><div class="project-sub">See the studio, services &amp; projects</div></div>
-      <span class="project-arrow">↗</span>
-    </a>
-    <div class="cta" id="whatsappCta" role="group" aria-label="Start a project on WhatsApp">
-      <div><strong>Have a project in mind?</strong><small>Let’s turn your idea into something real.</small></div><a class="arrow" id="whatsappArrow" href="https://wa.me/919687524884?text=Hi%20Vedant%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" aria-label="Message Vedant on WhatsApp">↗</a>
-    </div>
-    <div class="actions">
-      <button class="action" id="saveContact" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/><path d="M4 20a8 8 0 0 1 16 0"/><path d="M19 8v6m-3-3h6"/></svg>Save contact</button>
-      <button class="action" id="showQR" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zm5 0h2m-7 5h3m2-2v4"/></svg>Show QR</button>
-      <button class="action" id="shareCard" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.7 10.7 6.6-4.4m-6.6 7 6.6 4.4"/></svg>Share card</button>
-    </div>
-    <footer class="footer"><span>CODIGOOO® · Digital studio</span><a id="footerSite" href="https://codigooo.netlify.app/" target="_blank" rel="noopener">Open website ↗</a></footer>
-  </section>
+
+<div class="bg" aria-hidden="true"></div>
+<canvas id="sky" aria-hidden="true"></canvas>
+<div class="cross" id="cross" aria-hidden="true"></div>
+<div class="fx" aria-hidden="true"></div>
+
+<main class="stage">
+  <div class="tilt" id="tilt">
+    <article class="card" aria-label="Vedant Bhayani — visiting card">
+      <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+      <div class="glare"></div>
+
+      <!-- identity -->
+      <section class="col">
+        <header class="top rise">
+          <a class="logo" id="brandLink" href="#" target="_blank" rel="noopener" aria-label="CODIGOOO website">CODIG<span class="ooo"><i></i><i></i><i></i></span><sup>®</sup></a>
+          <span class="status lab"><b></b>Taking projects</span>
+        </header>
+        <div class="meta lab dim rise"><span>ID · 001 / Digital studio</span><span><span id="clock">--:--</span> IST</span></div>
+        <div class="ruler rise"><i id="rulerFill"></i></div>
+        <h1 class="name rise" id="name" aria-label="Vedant Bhayani"><span class="ln" data-t="VEDANT"></span><span class="ln acc" data-t="BHAYANI."></span></h1>
+        <div class="role rise" id="role">Founder &amp; Developer</div>
+        <p class="desc rise">Turning ideas into powerful digital experiences. Websites, apps and software built around your business.</p>
+        <div class="tags rise"><span class="tag"><b>01</b>Web</span><span class="tag"><b>02</b>App</span><span class="tag"><b>03</b>UI / UX</span><span class="tag"><b>04</b>Software</span></div>
+        <div class="spacer"></div>
+        <nav class="contacts rise" id="contacts" aria-label="Contact"></nav>
+        <footer class="strip rise"><svg id="barcode" preserveAspectRatio="none" aria-hidden="true"></svg><a class="lab" id="siteLink" href="#" target="_blank" rel="noopener">Open website ↗</a></footer>
+      </section>
+
+      <!-- QR + actions -->
+      <section class="col">
+        <div class="qrpanel rise">
+          <div class="qrhead"><span class="lab"><span style="color:var(--hot)">//</span> Scan to open</span>
+            <div class="seg" id="seg" data-v="card" role="tablist" aria-label="QR destination"><span class="knob"></span><button class="on" data-v="card" role="tab" aria-selected="true">Card</button><button data-v="site" role="tab" aria-selected="false">Site</button></div>
+          </div>
+          <div class="qrbox" id="qrbox">
+            <div class="qrframe" id="qrframe" title="Tap to enlarge"><canvas id="qr" aria-label="QR code"></canvas><span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span></div>
+            <div class="qrmsg" id="qrmsg" hidden>QR needs an internet connection the first time.</div>
+          </div>
+          <div class="qrfoot"><span class="lab dim url" id="qrUrl"></span><button class="lab" id="expandBtn" type="button">Expand ⤢</button></div>
+        </div>
+        <a class="wa rise" id="waLink" href="#" target="_blank" rel="noopener" aria-label="Start a project on WhatsApp">
+          <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2a9.8 9.8 0 0 0-8.4 14.8L2.2 21.8l4.9-1.3A9.8 9.8 0 1 0 12 2.2z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.6 7.4c.3-.5.6-.5.9-.5h.6c.2 0 .4.1.5.4l.8 1.9c.1.3 0 .5-.1.7l-.6.7c-.1.2-.2.4 0 .6.6 1.1 1.5 2 2.6 2.6.2.1.4.1.6 0l.7-.7c.2-.2.4-.2.7-.1l1.9.8c.3.1.4.3.4.5v.6c0 .4-.1.8-.6 1-1 .5-2.3.6-4.2-.4-1.6-.9-3-2.3-3.9-3.9-1-1.9-.9-3.3-.3-4.2z" fill="currentColor"/></svg></span>
+          <span class="tx"><strong>Have a project in mind?</strong><small>Message me on WhatsApp</small></span>
+          <span class="go">↗</span>
+        </a>
+        <div class="acts rise">
+          <a class="act lab m-only" id="callBtn" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2"/></svg>Call</a>
+          <a class="act lab m-only" id="mailBtn" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14"/><path d="m3 6 9 7 9-7"/></svg>Email</a>
+          <button class="act lab" id="saveBtn" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/><path d="M4 20a8 8 0 0 1 16 0"/><path d="M19 8v6m-3-3h6"/></svg>Save contact</button>
+          <button class="act lab" id="shareBtn" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.7 10.7 6.6-4.4m-6.6 7 6.6 4.4"/></svg>Share</button>
+          <button class="act lab d-only" id="expandBtn2" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zm5 0h2m-7 5h3m2-2v4"/></svg>Full-screen QR</button>
+        </div>
+      </section>
+    </article>
+  </div>
 </main>
-</div>
-<div id="qrbox" role="dialog" aria-modal="true" aria-labelledby="qrTitle">
- <div class="qrmodal"><h2 id="qrTitle">Scan to connect</h2><p>Open Vedant’s digital visiting card</p><div id="qrcode"></div><button class="close" id="closeQR" type="button">Done</button></div>
+
+<div class="zoom" id="zoom" role="dialog" aria-modal="true" aria-label="Full-screen QR code">
+  <div class="zoom__in"><span class="lab" id="zoomLabel" style="color:var(--hot)"></span><canvas id="qrBig"></canvas><span class="lab dim">Tap anywhere to close</span></div>
 </div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
-const $=id=>document.getElementById(id);
-const toastEl=$("toast");let toastTimer;
-function toast(message){toastEl.textContent=message;toastEl.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(()=>toastEl.classList.remove("show"),2600)}
-function setLink(id,url){const el=$(id);if(url)el.href=url}
-const phoneDigits=CONFIG.phoneInternational.replace(/\D/g,"");
-$("headline").innerHTML=CONFIG.firstName+"<br><span>"+CONFIG.lastName+".</span>";
-$("roleText").textContent=CONFIG.role;
-$("phoneText").textContent=CONFIG.phoneDisplay;
-setLink("brandLink",CONFIG.website);setLink("siteTextLink",CONFIG.website);setLink("portfolioLink",CONFIG.website);setLink("footerSite",CONFIG.website);
-setLink("phoneLink","tel:"+CONFIG.phoneInternational);
-setLink("whatsappArrow","https://wa.me/"+CONFIG.whatsappNumber+"?text="+encodeURIComponent("Hi "+CONFIG.firstName+", I'd like to discuss a project."));
-function makeVCard(){
- return ["BEGIN:VCARD","VERSION:3.0","N:"+CONFIG.lastName+";"+CONFIG.firstName+";;;","FN:"+CONFIG.name,"ORG:"+CONFIG.brand,"TITLE:"+CONFIG.role,"TEL;TYPE=CELL:"+CONFIG.phoneInternational,"URL:"+CONFIG.website,CONFIG.email?"EMAIL;TYPE=INTERNET:"+CONFIG.email:"","END:VCARD"].filter(Boolean).join("\r\n");
+(() => {
+"use strict";
+const $ = id => document.getElementById(id);
+const C = CONFIG, reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const pretty = u => (u || "").replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "");
+const TARGETS = { card: (C.cardUrl || "").trim() || location.href, site: C.website };
+let target = "card";
+
+let tt; const toast = m => { const t = $("toast"); t.textContent = m; t.classList.add("show"); clearTimeout(tt); tt = setTimeout(() => t.classList.remove("show"), 2800); };
+
+/* ── wire CONFIG ── */
+$("waLink").href = "https://wa.me/" + C.whatsappNumber + "?text=" + encodeURIComponent("Hi " + C.firstName + ", I'd like to discuss a project.");
+["brandLink", "siteLink"].forEach(id => $(id).href = C.website);
+$("callBtn").href = "tel:" + C.phoneInternational; $("mailBtn").href = "mailto:" + C.email;
+$("name").setAttribute("aria-label", C.name);
+const lns = $("name").querySelectorAll(".ln"); lns[0].dataset.t = C.firstName.toUpperCase(); lns[1].dataset.t = C.lastName.toUpperCase() + ".";
+$("role").textContent = C.role;
+const rows = [["Call", C.phoneDisplay, "tel:" + C.phoneInternational], ["Email", C.email, C.email && "mailto:" + C.email], ["Web", pretty(C.website), C.website],
+  ["Insta", pretty(C.instagram), C.instagram], ["In", pretty(C.linkedin), C.linkedin]].filter(r => r[1] && r[2]);
+$("contacts").innerHTML = rows.map(([k, v, h]) => `<a class="crow" href="${h}"${/^https?:/.test(h) ? ' target="_blank" rel="noopener"' : ""}><span class="lab dim">${k}</span><span class="v">${v}</span><span class="ar">↗</span></a>`).join("");
+
+/* ── barcode ── */
+(function () { const svg = $("barcode"); let x = 0, s = [...C.name + C.brand].reduce((a, c) => a + c.charCodeAt(0), 7), out = "";
+  const r = () => (s = (s * 9301 + 49297) % 233280) / 233280;
+  while (x < 300) { const w = 1 + (r() * 4 | 0); if (r() > .35) out += `<rect x="${x}" width="${w}" height="30" fill="#F3F0EC" opacity="${r() > .8 ? .45 : .9}"/>`; x += w + 1 + (r() * 2 | 0); }
+  svg.setAttribute("viewBox", "0 0 300 30"); svg.innerHTML = out; })();
+
+/* ── clock ── */
+const tick = () => { try { $("clock").textContent = new Intl.DateTimeFormat("en-GB", { timeZone: "Asia/Kolkata", hour: "2-digit", minute: "2-digit" }).format(new Date()); } catch (e) {} };
+tick(); setInterval(tick, 15000);
+
+/* ── decoding name + rotating role ── */
+const G = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#%&*+=/<>░▒▓";
+function decode(el, text, dur = 900) {
+  el.textContent = ""; const sp = [...text].map(ch => { const s = document.createElement("span"); s.className = "c"; s.textContent = ch === " " ? " " : ""; el.appendChild(s); return s; });
+  if (reduce) { sp.forEach((s, i) => s.textContent = text[i]); return; }
+  const lock = sp.map((s, i) => 120 + i * (dur / text.length) + Math.random() * 180), t0 = performance.now();
+  (function step(now) { const e = now - t0; let busy = false;
+    sp.forEach((s, i) => { if (text[i] === " ") return;
+      if (e >= lock[i]) { if (s.classList.contains("dec") || !s.textContent) { s.classList.remove("dec"); s.textContent = text[i]; } return; }
+      busy = true; s.classList.add("dec"); if (Math.random() < .5 || !s.textContent) s.textContent = G[(Math.random() * G.length) | 0]; });
+    if (busy) requestAnimationFrame(step); })(t0);
 }
-$("saveContact").addEventListener("click",()=>{
- const blob=new Blob([makeVCard()],{type:"text/vcard;charset=utf-8"}),url=URL.createObjectURL(blob),a=document.createElement("a");
- a.href=url;a.download=CONFIG.name.replace(/\s+/g,"-")+"-CODIGOOO.vcf";document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);
- toast("Contact downloaded — tap the file to save it to Contacts.");
-});
-const qrbox=$("qrbox");let qrMade=false;
-function showQR(){
- qrbox.classList.add("open");
- if(qrMade)return;
- const target=CONFIG.cardUrl.trim()||location.href;
- if(window.QRCode){$("qrcode").innerHTML="";new QRCode($("qrcode"),{text:target,width:130,height:130,colorDark:"#0a0a0b",colorLight:"#ffffff",correctLevel:QRCode.CorrectLevel.M});qrMade=true;}
- else {$("qrcode").textContent="QR needs an internet connection.";qrMade=true;}
+function scramble(el, text, dur = 600) {
+  if (reduce) { el.textContent = text; return; }
+  const t0 = performance.now();
+  (function step(now) { const p = Math.min(1, (now - t0) / dur); let o = "";
+    for (let i = 0; i < text.length; i++) o += text[i] === " " || i < p * text.length ? text[i] : G[(Math.random() * 40) | 0];
+    el.textContent = o; if (p < 1) requestAnimationFrame(step); })(t0);
 }
-$("showQR").addEventListener("click",showQR);
-$("closeQR").addEventListener("click",()=>qrbox.classList.remove("open"));
-qrbox.addEventListener("click",e=>{if(e.target===qrbox)qrbox.classList.remove("open")});
-$("shareCard").addEventListener("click",async()=>{
- const url=CONFIG.cardUrl.trim()||location.href;
- const data={title:CONFIG.name+" — "+CONFIG.brand,text:"Connect with "+CONFIG.name+" at "+CONFIG.brand+".",url};
- try{if(navigator.share)await navigator.share(data);else if(navigator.clipboard&&isSecureContext){await navigator.clipboard.writeText(url);toast("Visiting card link copied.");}else{prompt("Copy your visiting-card link:",url)}}catch(e){if(e.name!=="AbortError")toast("Sharing was cancelled or unavailable.");}
+const ROLES = [C.role, "Web · App · Software", "UI / UX · Systems", "Taking new projects"];
+let ri = 0; setInterval(() => { if (document.hidden) return; ri = (ri + 1) % ROLES.length; scramble($("role"), ROLES[ri]); }, 3200);
+
+/* ══════ THEMED QR: pixel modules, red finders, rings logo in the centre ══════ */
+const cache = {};
+function matrix(text) {
+  if (cache[text]) return cache[text];
+  if (!window.QRCode) return null;
+  const tmp = document.createElement("div");
+  const q = new QRCode(tmp, { text, width: 64, height: 64, correctLevel: QRCode.CorrectLevel.H });   // H = 30% recovery, room for the logo
+  const m = q._oQRCode; if (!m) return null;
+  const n = m.getModuleCount(), M = [];
+  for (let r = 0; r < n; r++) { M.push([]); for (let c = 0; c < n; c++) M[r].push(m.isDark(r, c)); }
+  const seed = [...text].reduce((a, ch) => a + ch.charCodeAt(0), 0); let s = seed;
+  const rnd = [];  for (let i = 0; i < n * n; i++) { s = (s * 9301 + 49297) % 233280; rnd.push(s / 233280); }
+  return (cache[text] = { M, n, rnd });
+}
+function drawQR(cv, text, sizeCss, progress = 1) {
+  const Q = matrix(text); if (!Q) return false;
+  const { M, n, rnd } = Q, quiet = 3, total = n + quiet * 2, d = Math.min(devicePixelRatio || 1, 3);
+  const px = Math.round(sizeCss * d); if (cv.width !== px) { cv.width = cv.height = px; }
+  cv.style.width = cv.style.height = sizeCss + "px";
+  const g = cv.getContext("2d"), cell = px / total, o = quiet * cell;
+  g.fillStyle = "#F3F0EC"; g.fillRect(0, 0, px, px);                                   // light base = scannable by every camera
+  const L = Math.max(5, Math.round(n * .2) | 1), l0 = (n - L) >> 1;                        // logo zone (odd size, centred)
+  const inFinder = (r, c) => (r < 8 && c < 8) || (r < 8 && c >= n - 8) || (r >= n - 8 && c < 8);
+  const inLogo = (r, c) => r >= l0 - 1 && r < l0 + L + 1 && c >= l0 - 1 && c < l0 + L + 1;
+  for (let r = 0; r < n; r++) for (let c = 0; c < n; c++) {
+    if (!M[r][c] || inFinder(r, c) || inLogo(r, c)) continue;
+    const k = rnd[r * n + c]; if (k > progress) continue;
+    g.fillStyle = k < .1 ? "#C3000E" : "#070707";                                         // a few modules in brand red
+    const inset = cell * .08;
+    g.fillRect(o + c * cell + inset, o + r * cell + inset, cell - inset * 2, cell - inset * 2);
+  }
+  [[0, 0], [0, n - 7], [n - 7, 0]].forEach(([r, c]) => {                                   // finder patterns, in the theme
+    const x = o + c * cell, y = o + r * cell;
+    g.fillStyle = "#C3000E"; g.fillRect(x, y, cell * 7, cell * 7);
+    g.fillStyle = "#F3F0EC"; g.fillRect(x + cell, y + cell, cell * 5, cell * 5);
+    g.fillStyle = "#070707"; g.fillRect(x + cell * 2, y + cell * 2, cell * 3, cell * 3);
+  });
+  const lx = o + l0 * cell, ly = o + l0 * cell, lw = L * cell;                              // centre badge: the "ooo"
+  g.fillStyle = "#070707"; g.fillRect(lx, ly, lw, lw);
+  g.strokeStyle = "#FF2B2B"; g.lineWidth = lw * .07; const rr = lw * .11;
+  [-1, 0, 1].forEach(i => { g.beginPath(); g.arc(lx + lw / 2 + i * rr * 2.7, ly + lw / 2, rr, 0, Math.PI * 2); g.stroke(); });
+  return true;
+}
+const qrbox = $("qrbox"), qr = $("qr"), frame = $("qrframe");
+let qSize = 200, anim = 0;
+function layoutQR() {
+  qSize = Math.max(120, Math.floor(Math.min(qrbox.clientWidth, qrbox.clientHeight) - 22));
+  frame.style.width = frame.style.height = qSize + "px";
+  $("qrmsg").hidden = drawQR(qr, TARGETS[target], qSize);
+}
+function animateQR() {                                   // pixel dissolve when switching Card ⇄ Site
+  if (reduce) return layoutQR();
+  cancelAnimationFrame(anim); const t0 = performance.now();
+  (function step(now) { const p = Math.min(1, (now - t0) / 650); if (!drawQR(qr, TARGETS[target], qSize, p * p * (3 - 2 * p))) { $("qrmsg").hidden = false; return; } if (p < 1) anim = requestAnimationFrame(step); })(t0);
+}
+function setTarget(v) {
+  target = v; $("seg").dataset.v = v;
+  $("seg").querySelectorAll("button").forEach(b => { const on = b.dataset.v === v; b.classList.toggle("on", on); b.setAttribute("aria-selected", on); });
+  scramble($("qrUrl"), pretty(TARGETS[v]), 450); animateQR();
+}
+$("seg").querySelectorAll("button").forEach(b => b.addEventListener("click", () => setTarget(b.dataset.v)));
+$("qrUrl").textContent = pretty(TARGETS.card);
+new ResizeObserver(layoutQR).observe(qrbox);
+
+/* full-screen QR */
+const zoom = $("zoom");
+function openZoom() {
+  const s = Math.floor(Math.min(innerWidth * .78, innerHeight * .68));
+  if (!drawQR($("qrBig"), TARGETS[target], s)) return toast("QR needs an internet connection.");
+  $("zoomLabel").textContent = (target === "card" ? "Visiting card" : "Website") + " · " + pretty(TARGETS[target]);
+  zoom.classList.add("open");
+}
+[frame, $("expandBtn"), $("expandBtn2")].forEach(el => el.addEventListener("click", openZoom));
+zoom.addEventListener("click", () => zoom.classList.remove("open"));
+addEventListener("keydown", e => { if (e.key === "Escape") zoom.classList.remove("open"); });
+
+/* ── save contact (.vcf) ── */
+function vcard() {
+  const esc = s => String(s).replace(/([,;\\])/g, "\\$1");
+  return ["BEGIN:VCARD", "VERSION:3.0", `N:${esc(C.lastName)};${esc(C.firstName)};;;`, `FN:${esc(C.name)}`, `ORG:${esc(C.brand)}`, `TITLE:${esc(C.role)}`,
+    `TEL;TYPE=CELL:${C.phoneInternational}`, C.email && `EMAIL;TYPE=INTERNET:${C.email}`, C.website && `URL:${C.website}`,
+    C.instagram && `X-SOCIALPROFILE;TYPE=instagram:${C.instagram}`, C.linkedin && `X-SOCIALPROFILE;TYPE=linkedin:${C.linkedin}`,
+    `NOTE:${esc(C.brand + " — websites, apps and software. Card: " + TARGETS.card)}`, "END:VCARD"].filter(Boolean).join("\r\n");
+}
+$("saveBtn").addEventListener("click", () => {
+  try { const blob = new Blob([vcard()], { type: "text/vcard;charset=utf-8" }), url = URL.createObjectURL(blob), a = document.createElement("a");
+    a.href = url; a.download = C.name.replace(/\s+/g, "-") + "-" + C.brand + ".vcf"; document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 2000); toast("Contact downloaded — open it to add to Contacts.");
+  } catch (e) { toast("Couldn't save here — call or WhatsApp instead."); }
 });
+
+/* ── share (shares whichever QR tab is active) ── */
+$("shareBtn").addEventListener("click", async () => {
+  const url = TARGETS[target], data = { title: C.name + " — " + C.brand, text: "Connect with " + C.name + " at " + C.brand + ".", url };
+  try { if (navigator.share) { await navigator.share(data); return; }
+    if (navigator.clipboard && isSecureContext) { await navigator.clipboard.writeText(url); toast("Link copied: " + pretty(url)); return; }
+    throw new Error("no-share");
+  } catch (e) { if (e && e.name === "AbortError") return; toast("Share this link: " + pretty(url)); }
+});
+
+/* ── entrance ── */
+requestAnimationFrame(() => {
+  document.body.classList.add("ready");
+  document.querySelectorAll(".rise").forEach((el, i) => el.style.transitionDelay = (i * .05) + "s");
+  lns.forEach((ln, i) => setTimeout(() => decode(ln, ln.dataset.t), 250 + i * 260));
+  setTimeout(() => $("rulerFill").style.width = "100%", 300);
+  setTimeout(() => { layoutQR(); animateQR(); }, 450);
+});
+if (document.fonts) document.fonts.ready.then(layoutQR);
+
+/* ── tilt + glare (mouse only) ── */
+const tilt = $("tilt");
+if (matchMedia("(hover:hover) and (pointer:fine)").matches && !reduce) {
+  let rx = 0, ry = 0, tx = 0, ty = 0; const glare = tilt.querySelector(".glare"), card = tilt.querySelector(".card");
+  tilt.addEventListener("pointermove", e => { const r = tilt.getBoundingClientRect(), px = (e.clientX - r.left) / r.width, py = (e.clientY - r.top) / r.height;
+    ty = (px - .5) * 5; tx = (.5 - py) * 4; glare.style.setProperty("--gx", px * 100 + "%"); glare.style.setProperty("--gy", py * 100 + "%"); });
+  tilt.addEventListener("pointerleave", () => { tx = ty = 0; });
+  (function loop() { rx += (tx - rx) * .08; ry += (ty - ry) * .08; card.style.transform = `rotateX(${rx.toFixed(2)}deg) rotateY(${ry.toFixed(2)}deg)`; requestAnimationFrame(loop); })();
+}
+
+/* ── crosshairs ── */
+(function () { const el = $("cross"); const build = () => { el.innerHTML = ""; const cols = innerWidth < 760 ? 3 : 6;
+  for (let i = 1; i < cols; i++) for (let j = 1; j < 4; j++) { const c = document.createElement("i"); c.style.left = (i / cols * 100) + "%"; c.style.top = (j / 4 * 100) + "%"; el.appendChild(c); } };
+  build(); addEventListener("resize", build); })();
+
+/* ── pixel skyline ── */
+(function () {
+  const cv = $("sky"), g = cv.getContext("2d"); let W, H, blds = [], wins = [];
+  const build = () => { const d = Math.min(devicePixelRatio || 1, 2); W = cv.width = Math.round(cv.clientWidth * d); H = cv.height = Math.round(cv.clientHeight * d);
+    blds = []; wins = []; const u = Math.max(6, Math.round(W / 160));
+    for (let l = 0; l < 2; l++) { let x = -u * 2;
+      while (x < W) { const w = u * (5 + (Math.random() * 9 | 0)), h = H * (l ? .25 + Math.random() * .55 : .15 + Math.random() * .4); blds.push([x, H - h, w, h, l]);
+        if (l) for (let yy = H - h + u * 2; yy < H - u; yy += u * 2) for (let xx = x + u; xx < x + w - u; xx += u * 2) if (Math.random() < .28) wins.push([xx, yy, u, Math.random()]);
+        x += w + u * l; } } };
+  const draw = t => { g.clearRect(0, 0, W, H);
+    blds.forEach(([x, y, w, h, l]) => { g.fillStyle = l ? "rgba(40,0,4,.55)" : "rgba(60,0,6,.35)"; g.fillRect(x, y, w, h); });
+    wins.forEach(w => { const on = Math.sin(t * .0006 + w[3] * 40) > -.2; g.fillStyle = on ? (w[3] > .92 ? "rgba(255,255,255,.75)" : "rgba(255,120,110,.55)") : "rgba(255,80,80,.08)"; g.fillRect(w[0], w[1], w[2], w[2]); }); };
+  build(); addEventListener("resize", build);
+  if (reduce) draw(0); else (function loop(t) { draw(t); requestAnimationFrame(loop); })(0);
+})();
+})();
 </script>
 </body>
 </html>
